@@ -1,4 +1,5 @@
 const runs = [0,1,2,4,6];
+let x =document.getElementById("my_audio") as HTMLAudioElement;
 let btn1=document.getElementById('CSK') as HTMLButtonElement;
 btn1.disabled = true;
 let btn2=document.getElementById('MI') as HTMLButtonElement;
