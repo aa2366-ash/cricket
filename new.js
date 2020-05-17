@@ -7,6 +7,7 @@ btn2.disabled = true;
 var resultbtn = document.getElementById('result');
 resultbtn.disabled = true;
 var startbtn = document.getElementById('start');
+var startbtn1 = document.getElementById('start1');
 var flag = 1;
 var intervalId;
 var playarray1 = ['SURESH RAINA', "MS DHONI", "DWAYNE BRAVO", "RAVINDRA JADEJA", "FAF DU PLESSIS", "MURALI VIJAY", "SAM CURRAN", "SHANE WATSON", "MITCHELL SATNER", "LUNGI NIGIDI"];
@@ -83,6 +84,9 @@ var Team = /** @class */ (function () {
     };
     Team.prototype.settimer = function (counter) {
         startbtn.disabled = true;
+        if (flag !== 1) {
+            startbtn1.disabled = true;
+        }
         if (flag == 1) {
             btn1.disabled = false;
             //flag=2;
