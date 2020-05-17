@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Music player</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+<style >
+	.cov{
+		background-image: url("https://cdn3.vectorstock.com/i/1000x1000/48/72/karaoke-bar-neon-sign-vector-22884872.jpg");
+		background-repeat: no-repeat;
+		 background-size: cover;
+	}
+	nav{
+		background-image: url("https://im.whatshot.in/img/webcover/2017/Jun/1497524423-web-cover-final.jpg");
+		height: 200px;
+		background-repeat: no-repeat;
+		 background-size: cover;
+
+	}
+	
+	.space{
+		margin-top: 25px;
+		align-content: center;
+		align-items: center;
+		justify-content: center;
+	}
+
+</style>
+<body>
+	<script type="text/javascript" src="script.js"></script>
+<nav class="navbar navbar-light bg-light container-fluid"><H1>ASHWINI'S Playlist</H1> </nav>
+<div class="row container">
+<div class="col-6 space">
+
+  <div class="form-group">
+    <label for="song">Enter the Song name</label>
+    <input type="text" class="form-control" id="song" placeholder="song name" onfocus=this.value=''>
+  </div>
+
+  <div class="form-group">
+    <label for="singer_name">Enter the Singer name</label>
+    <input type="text" class="form-control" id="singer_name" placeholder="singer name" onfocus=this.value=''>
+  </div>
+  <div class="form-group">
+    <label for="genre">Select Mood</label>
+    <select class="form-control" id="genre">
+      <option id="1" value="a">You don't wait for love to happen to you</option>
+      <option id="2" value="b">Failure is the stepping stone of success</option>
+      <option id="3" value="c">Dance like nobody's watching</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="url">Enter the Song URL</label>
+    <input type="text" class="form-control" id="url" placeholder="Link of the song" onfocus=this.value=''>
+  </div>
+   <button type="submit" onclick="createsong()"class="btn btn-primary">Create song</button>
+
+</div>
+<div class="col-6 space" >
+<div class="row container space">
+	<div class="col-4">
+		<button type="button" onclick="display(1)" class="btn btn-warning">You don't wait for love to happen to you</button>
+</div>
+	<div class="col-4">
+		<button type="button" onclick="display(2)" class="btn btn-warning">Failure is the stepping stone of success</button>
+</div>
+	<div class="col-4">
+		<button type="button" onclick="display(3)" class="btn btn-warning">Dance like nobody's watching</button>
+</div>
+</div>
+<div class="row space" >
+	<ul class="list-group" id="list"> </ul>
+	
+</div>	
+</div>
+
+</div>
+</body>
+</html>
