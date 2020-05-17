@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Stay in place */
+            z-index: 1;
+            /* Sit on top */
+            padding-top: 100px;
+            /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%px;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0);
+            /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 100%;
+            justify-content: center;
+            text-align: center;
+            align-content: center;
+            align-items: center;
+        }
+
+        /* The Close Button */
+        .close {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        li {
+            overflow-wrap: auto;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            align-content: center;
+        }
+
+        .atcenter {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+
+        }
+
+        .space {
+            margin-top: 20px;
+        }
+
+        img {
+            background-size: cover;
+            justify-content: center;
+            align-content: center;
+        }
+
+        .imgsize {
+            height: 250px;
+            width: 100%;
+        }
+    </style>
+    <title>ipl_2020</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body
+    style="background-image: url(https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80); background-size:cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="modal fade" id="alertmodel">
+                    <div class="modal-dialog model-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h4>INSTRUCTIONS</h4>
+                            </div>
+                            <div class="modal-body" style="text-align: left;">
+                                <P>CSK CHOOSE TO BAT FIRST<BR>
+                                1. Hit the START button to start the timmer<br>
+                                2. Click the HIT button to complete batting within 60 seconds.<br>
+                                3. After CSK batting, go to MI.<br>
+                                4. Hit the start button for MI and continue batting.<br>
+                                5. Click "GENERATE RESULT" at the bottom for result.
+                          </P>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+        <script type="text/javascript">
+        $(document).ready(function (){
+            setTimeout(function(){
+           $("#alertmodel").modal('show');
+            }, 2000);
+        });
+        </script>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12" style="text-align: center;">
+                <img class="imgsize" ;
+                    src="https://in.bmscdn.com/nmcms/events/banner/desktop/media-desktop-chennai-super-kings-vs-mumbai-indians-2019-3-24-t-14-14-32.jpg">
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row atcenter">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/2/2b/Chennai_Super_Kings_Logo.svg/1200px-Chennai_Super_Kings_Logo.svg.png"
+                        ; style="height: 100px; width: 140px;">
+                </div>
+                <div class="row">
+                    <div class="container">
+                        <div class="row atcenter">
+                            <div class="col-3">
+                                <button type="button" class="btn btn-primary" onclick="team1.hit()"
+                                    id="CSK">HIT</button>
+                            </div>
+                            <div class="col-3">
+                                <button type="button" class="btn btn-primary" onclick="team1.settimer(60)"
+                                    id="start">START</button>
+                            </div>
+                            <div class="col-6" style="overflow: hidden;color:white">
+                                <h5>
+                                    <p style="float: left;">TIMER :</p>
+                                    <p style="float: center;" id="timer_value"></p>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="container fluid">
+                        <div class="row">
+                            <div class="col-4">
+                                <ul class="list-group">
+                                    <li class="list-group-item">PLAYERS</li>
+                                    <li class="list-group-item">Raina</li>
+                                    <li class="list-group-item">Dhoni</li>
+                                    <li class="list-group-item">Bravo</li>
+                                    <li class="list-group-item">Jadeja</li>
+                                    <li class="list-group-item">DuPlesis</li>
+                                    <li class="list-group-item">MuraliV</li>
+                                    <li class="list-group-item">Curran</li>
+                                    <li class="list-group-item">Watson</li>
+                                    <li class="list-group-item">Satner</li>
+                                    <li class="list-group-item">Ngidi</li>
+                                </ul>
+                            </div>
+                            <div class="col-5">
+                                <ul class="list-group" id="runs">
+                                    <li class="list-group-item">RUNS</li>
+                                    <li class="list-group-item" id="CSK1">&nbsp;</li>
+                                    <li class="list-group-item" id="CSK2">&nbsp;</li>
+                                    <li class="list-group-item" id="CSK3">&nbsp;</li>
+                                    <li class="list-group-item" id="CSK4">&nbsp;</li>
+                                    <li class="list-group-item" id="CSK5">&nbsp;</li>
+                                    <li class="list-group-item" id="CSK6">&nbsp;</li>
+                                    <li class="list-group-item" id="CSK7">&nbsp;</li>
+                                    <li class="list-group-item" id="CSK8">&nbsp;</li>
+                                    <li class="list-group-item" id="CSK9">&nbsp;</li>
+                                    <li class="list-group-item" id="CSK10">&nbsp;</li>
+                                </ul>
+
+                            </div>
+                            <div class="col-3">
+                                <ul class="list-group" id="total">
+                                    <li class="list-group-item" style="text-align: center;">SUM</li>
+                                    <li class="list-group-item" id="CSKt1">&nbsp;</li>
+                                    <li class="list-group-item" id="CSKt2">&nbsp;</li>
+                                    <li class="list-group-item" id="CSKt3">&nbsp;</li>
+                                    <li class="list-group-item" id="CSKt4">&nbsp;</li>
+                                    <li class="list-group-item" id="CSKt5">&nbsp;</li>
+                                    <li class="list-group-item" id="CSKt6">&nbsp;</li>
+                                    <li class="list-group-item" id="CSKt7">&nbsp;</li>
+                                    <li class="list-group-item" id="CSKt8">&nbsp;</li>
+                                    <li class="list-group-item" id="CSKt9">&nbsp;</li>
+                                    <li class="list-group-item" id="CSKt10">&nbsp;</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-sm-6">
+                <div class="row atcenter">
+                    <img src="https://i.pinimg.com/originals/c6/b1/5e/c6b15ed921848e8eb5f4c506226e1871.png" ;
+                        style="height: 100px; width: 140px;">
+                </div>
+                <div class="row">
+                    <div class="container">
+                        <div class="row atcenter">
+                            <div class="col-3">
+                                <button type="button" class="btn btn-primary" onclick="team2.hit()" id="MI">HIT</button>
+                            </div>
+                            <div class="col-3">
+                                <button type="button" class="btn btn-primary" onclick="team2.settimer(60)"
+                                    id="start">START</button>
+                            </div>
+                            <div class="col-6" style="overflow: hidden;color:white">
+                                <h5>
+                                    <p style="float: left;">TIMER :</p>
+                                    <p style="float: center;" id="timer_value1"></p>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 5px;">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-4">
+                                <ul class="list-group">
+                                    <li class="list-group-item">PLAYERS</li>
+                                    <li class="list-group-item">R.Sharma</li>
+                                    <li class="list-group-item">Pandya</li>
+                                    <li class="list-group-item">Bumrah</li>
+                                    <li class="list-group-item">Pollard</li>
+                                    <li class="list-group-item">Malinga</li>
+                                    <li class="list-group-item">TrentBoult</li>
+                                    <li class="list-group-item">Yadav</li>
+                                    <li class="list-group-item">ChrisLyn</li>
+                                    <li class="list-group-item">Ishan</li>
+                                    <li class="list-group-item">Pandya</li>
+                                </ul>
+                            </div>
+                            <div class="col-5">
+                                <ul class="list-group">
+                                    <li class="list-group-item">RUNS</li>
+                                    <li class="list-group-item" id="MI1">&nbsp;</li>
+                                    <li class="list-group-item" id="MI2">&nbsp;</li>
+                                    <li class="list-group-item" id="MI3">&nbsp;</li>
+                                    <li class="list-group-item" id="MI4">&nbsp;</li>
+                                    <li class="list-group-item" id="MI5">&nbsp;</li>
+                                    <li class="list-group-item" id="MI6">&nbsp;</li>
+                                    <li class="list-group-item" id="MI7">&nbsp;</li>
+                                    <li class="list-group-item" id="MI8">&nbsp;</li>
+                                    <li class="list-group-item" id="MI9">&nbsp;</li>
+                                    <li class="list-group-item" id="MI10">&nbsp;</li>
+                                </ul>
+
+                            </div>
+                            <div class="col-3">
+                                <ul class="list-group ">
+                                    <li class="list-group-item">SUM</li>
+                                    <li class="list-group-item" id="MIt1">&nbsp;</li>
+                                    <li class="list-group-item" id="MIt2">&nbsp;</li>
+                                    <li class="list-group-item" id="MIt3">&nbsp;</li>
+                                    <li class="list-group-item" id="MIt4">&nbsp;</li>
+                                    <li class="list-group-item" id="MIt5">&nbsp;</li>
+                                    <li class="list-group-item" id="MIt6">&nbsp;</li>
+                                    <li class="list-group-item" id="MIt7">&nbsp;</li>
+                                    <li class="list-group-item" id="MIt8">&nbsp;</li>
+                                    <li class="list-group-item" id="MIt9">&nbsp;</li>
+                                    <li class="list-group-item" id="MIt10">&nbsp;</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row atcenter">
+            <div class="col-sm-12 atcenter" style="height: 200px ;">
+
+                <button type="button" class="btn btn-primary" onclick="generate()" id="result"
+                    style="margin-top: 5px;">Generate result</button>
+
+            </div>
+
+        </div>
+    </div>
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" id="span">&times;</span>
+            <div class="modal-content">
+                <P id="line1"></P>
+                <P id="line2"></P>
+                <img id="popup_img" height=250px; width=400px;>
+            </div>
+        </div>
+    </div>
+    <script src="new.js"></script>
+</body>
+
+</html>
