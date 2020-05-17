@@ -127,7 +127,7 @@ function generate() {
         var a1 = (arrayMaxIndex(team1.overScore));
         var a = team1.totalScore - team2.totalScore;
         var p = document.getElementById("line1");
-        p.innerHTML = "CSK WON THE MATCH BY " + a + "RUNS";
+        p.innerHTML = "CSK WON THE MATCH BY " + a + " RUNS";
         p = document.getElementById("line2");
         p.innerHTML = "MAN OF THE MATCH :" + playarray1[a1] + " TOTAL RUNS :" + team1.overScore[a1];
         var im = document.getElementById("popup_img");
@@ -140,7 +140,7 @@ function generate() {
         var a1 = (arrayMaxIndex(team2.overScore));
         var a = team2.totalScore - team1.totalScore;
         var p = document.getElementById("line1");
-        p.innerHTML = "MI WON THE MATCH BY " + a + "RUNS";
+        p.innerHTML = "MI WON THE MATCH BY " + a + " RUNS";
         p = document.getElementById("line2");
         p.innerHTML = "MAN OF THE MATCH :" + playarray2[a1] + " TOTAL RUNS :" + team2.overScore[a1];
         var im = document.getElementById("popup_img");
