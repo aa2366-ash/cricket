@@ -1,4 +1,5 @@
 var runs = [0, 1, 2, 4, 6];
+var x = document.getElementById("my_audio");
 var btn1 = document.getElementById('CSK');
 btn1.disabled = true;
 var btn2 = document.getElementById('MI');
